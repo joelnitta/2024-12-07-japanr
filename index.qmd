@@ -9,10 +9,26 @@ execute:
   echo: true
 ---
 
-## Amazing content
+## 自己紹介：ニッタ ジョエル
 
-ipsum lorem
+- 千葉大学 准教授
+- シダ植物の進化や生態学
+- Rパッケージ開発（進化生態学系）
 
-## More amazing content
+## Quarto
 
-blip blop
+- QuartoはRやPythonの計算結果を直接文章に入れるツール
+  - 使い方が非常に多様で豊富
+
+- 「文章」には様々な形式が含まれいています
+  - HTML
+  - PDF
+  - スライド
+  - ウエブサイト
+
+## Quartoの多言語機能
+
+- しかし、Quartoは比較的新しいため、欠けている機能もあります。
+
+- 備え付けで多言語できる機能がありません
+
