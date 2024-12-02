@@ -32,3 +32,60 @@ execute:
 
 - 備え付けで多言語できる機能がありません
 
+https://github.com/quarto-dev/quarto-cli/issues/275
+
+# caution
+
+- this functionality may eventually be added to Quarto, which would make this package obsolete
+
+- but we don't know their timeline, so if you need i18n now, it's a good option (though not the only one)
+
+## babelquarto
+
+- translate website or book
+
+- simple file structure
+
+- any number of languages
+
+- An R package, not a plugin (may not be compatible with all plugins)
+
+## babelquarto demo using SWC-JA
+
+- index.qmd
+
+- index.ja.qmd
+
+## register language
+
+- modifies _quarto.yml
+
+## profiles
+
+- Use for more complex setups
+
+# Local rendering
+
+- render function
+
+- httw function
+
+## github action
+
+- modified from default, needs to install r packages
+
+## what about translating content?
+
+- chatgpt custom gpt
+
+- babeldown integration with deepl
+
+## what about keeping translation up to date?
+
+- local gettext and PO files
+
+- web based apps like crowdin
+
+## take home message
+
+- i18n enbles access and grows communities!
