@@ -38,14 +38,7 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 
 ::: {.column width="40%"}
 - QuartoはRやPythonの計算結果を直接文章に入れるツール
-  - 使い方が非常に多様で豊富
-  - 使い方が非常に多様で豊富
-
-- 「文章」には様々な形式が含まれいています
-- 使い方が非常に多様で豊富
-
-- 「文章」には様々な形式が含まれいています
-  - HTML
+  - HTML（ウェブサイト、スライド、本）
   - PDF
   - MS Word
 :::
