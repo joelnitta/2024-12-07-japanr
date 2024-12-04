@@ -1,2 +1,9 @@
 execute:
   freeze: auto
+
+project:
+  render:
+    - "*.qmd"
+    - "!example/"
+    - "!example-quarto.yml"
+    - "!example-index-*.qmd"

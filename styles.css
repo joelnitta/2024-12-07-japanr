@@ -1,3 +1,99 @@
+/* General body styles */
+body {
+  background-color: #1b1b1b; /* Dark background */
+  color: #ffffff; /* White text for contrast */
+  font-family: 'Roboto', sans-serif; /* Modern font */
+}
+
+/* Slide title underline fix */
+.title-slide h1 {
+  font-size: 3.5em;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Subtle glow */
+  border-bottom: 3px solid #00d1c1; /* Teal underline */
+  display: inline-block; /* Ensure it doesn't stretch full width */
+  margin-bottom: 0.5em; /* Add spacing below the title */
+  padding-bottom: 0.2em; /* Add spacing for the underline */
+}
+
+.title-slide h2 {
+  font-size: 2em;
+  color: #c4c4c4;
+}
+
+.title-slide p {
+  color: #a0a0a0; /* Slightly muted gray for additional text */
+}
+
+/* Links */
+a {
+  color: #00d1c1; /* Teal color for links */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffa500; /* Orange highlight on hover */
+  text-decoration: underline;
+}
+
+/* Headers (h1-h6) */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff;
+  border-bottom: 2px solid #00d1c1; /* Teal underline */
+  padding-bottom: 0.2em;
+}
+
+/* Code blocks */
+code {
+  background-color: #2e2e2e;
+  color: #00d1c1; /* Teal text */
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Blocks (e.g., notes, warnings) */
+.note {
+  background-color: #252525;
+  color: #ffffff;
+  border-left: 5px solid #00d1c1;
+  padding: 0.5em;
+}
+
+.warning {
+  background-color: #3c3c3c;
+  color: #ffffff;
+  border-left: 5px solid #ffa500;
+  padding: 0.5em;
+}
+
+/* List items */
+ul, ol {
+  color: #ffffff;
+}
+
+ul li::marker, ol li::marker {
+  color: #00d1c1; /* Teal bullet points */
+}
+
+/* Footer */
+footer {
+  color: #a0a0a0;
+  font-size: 0.8em;
+  border-top: 1px solid #2e2e2e;
+  margin-top: 2em;
+  padding-top: 1em;
+  text-align: center;
+}
+
+/* Image captions */
+figcaption {
+  color: #c4c4c4;
+  font-style: italic;
+  font-size: 0.9em;
+  text-align: center;
+}
+
 .tiny {
   font-size: 20%;
 }

@@ -1,13 +1,30 @@
 ---
-title: "My Presentation"
-author: "Joel Nitta"
 format:
   revealjs:
     incremental: false
-    css: styles.css
+    css: custom.css
 execute: 
   echo: true
 ---
+
+```{r}
+#| label: setup
+#| include: false
+library(quarto)
+library(babelquarto)
+library(fs)
+suppressPackageStartupMessages(library(tidyverse))
+```
+
+## babelquartoによる<br>quartoウエブサイトの<br>多言語化 {background-color="black" background-image="images/alexandre-debieve-UmX-OgGODfM-unsplash.jpg" background-size="contain" background-repeat="no-repeat" background-position="right"}
+
+ニッタ ジョエル
+
+::: {.aside}
+
+Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E3%83%A9%E3%82%B8%E3%82%AA%E3%83%97%E3%83%AC%E3%83%BC%E3%83%A4%E3%83%BC%E3%83%AD%E3%83%83%E3%83%88-UmX-OgGODfM)
+
+:::
 
 ## 自己紹介：ニッタ ジョエル
 
@@ -15,60 +32,295 @@ execute:
 - シダ植物の進化や生態学
 - Rパッケージ開発（進化生態学系）
 
-## Quarto
+## Quarto はすごいぞ
 
+:::: {.columns}
+
+::: {.column width="40%"}
 - QuartoはRやPythonの計算結果を直接文章に入れるツール
-  - 使い方が非常に多様で豊富
-
-- 「文章」には様々な形式が含まれいています
+- 使い方が非常に多様で豊富
   - HTML
   - PDF
-  - スライド
-  - ウエブサイト
+  - MS Word
+:::
 
-## Quartoの多言語機能
+::: {.column width="60%"}
+![](https://rstudio.github.io/cheatsheets/html/images/quarto-illustration.png)
+:::
 
+::::
+
+## Quarto の多言語機能がまだ出来ていない
+
+:::: {.columns}
+
+::: {.column width="50%"}
 - しかし、Quartoは比較的新しいため、欠けている機能もあります。
 
-- 備え付けで多言語できる機能がありません
+- 備え付けで**多言語機能**がありません
+:::
 
-https://github.com/quarto-dev/quarto-cli/issues/275
+::: {.column width="50%"}
+![](images/multi_lang_issue.png){width=90%}
+:::
 
-# caution
+[<https://github.com/quarto-dev/quarto-cli/issues/275>]{.medsmall}
 
-- this functionality may eventually be added to Quarto, which would make this package obsolete
+::::
 
-- but we don't know their timeline, so if you need i18n now, it's a good option (though not the only one)
+## 注意
 
-## babelquarto
+- いつか多言語機能がQuartoに加わる可能性があります
 
-- translate website or book
+- その場合、`babelquarto`は要らなくなるでしょう
 
-- simple file structure
+- でも開発スクジュールが分かりませんので、多言語のニーズが今あれば使ってもいいと思います
 
-- any number of languages
+## `babelquarto`
 
-- An R package, not a plugin (may not be compatible with all plugins)
+:::: {.columns}
 
-## babelquarto demo using SWC-JA
+::: {.column width="50%"}
+- Quarto BookかWebsite**各言語**のバージョンを**レンダーする**
 
-- index.qmd
+- 翻訳とは別
 
-- index.ja.qmd
+- Quartoのpluginではなく、Rパッケージ
+:::
 
-## register language
+::: {.column width="50%"}
+![](images/babelquarto_pagedown.png)
+:::
 
-- modifies _quarto.yml
+::::
+
+## 例：ソフトウェア・カーペントリー日本 {.medsmall}
+
+<iframe src="https://swcarpentry-ja.github.io/" width="100%" height="500px"></iframe>
+
+[<https://swcarpentry-ja.github.io/>]{.large}
+
+# babelquarto demo 
+
+## 基本的なサイトを作る
+
+```{r}
+#| label: reset-example-site
+#| echo: false
+if (dir_exists("example")) {
+  dir_delete("example")
+}
+```
+
+:::: {.columns}
+
+::: {.column width="50%" .medsmall}
+```{r}
+#| label: create-example-site
+library(quarto)
+quarto_create_project(
+  name = "example",
+  type = "website",
+  no_prompt = TRUE,
+  quiet = TRUE
+)
+```
+
+:::
+
+::: {.column width="50%" .medsmall}
+```{r}
+#| label: show-index
+#| filename: "example/_quarto.yml"
+#| eval: false
+#| file: example/_quarto.yml
+```
+:::
+
+::::
+
+## 主言語を登録する
+
+:::: {.columns}
+
+::: {.column width="50%" .medsmall}
+```{r}
+#| label: add-lang
+library(babelquarto)
+register_main_language(
+  main_language = "ja",
+  project_path = "example"
+)
+```
+
+:::
+
+::: {.column width="50%" .medsmall}
+```{r}
+#| label: show-index-add-lang
+#| filename: "example/_quarto.yml"
+#| eval: false
+#| file: example/_quarto.yml
+```
+:::
+
+::::
+
+## 翻訳言語を追加する
+
+:::: {.columns}
+
+::: {.column width="50%" .medsmall}
+```{r}
+#| label: add-second-lang
+library(babelquarto)
+register_further_languages(
+  further_languages = c("en"),
+  project_path = "example"
+)
+```
+
+:::
+
+::: {.column width="50%" .medsmall}
+```{r}
+#| label: show-index-add-second-lang
+#| filename: "example/_quarto.yml"
+#| eval: false
+#| file: example/_quarto.yml
+```
+:::
+
+::::
+
+## _quarto.ymlを編集する
+
+:::: {.columns .medsmall}
+
+::: {.column width="50%"}
+```{r}
+#| label: show-index-add-second-lang-show-again
+#| code-line-numbers: "|5,24,26,29-30"
+#| filename: "example/_quarto.yml"
+#| eval: false
+#| file: example/_quarto.yml
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| label: edit-qmd
+#| include: false
+
+fs::file_copy("example-quarto.yml", "example/_quarto.yml", overwrite = TRUE)
+```
+
+```{r}
+#| label: show-index-after-edit
+#| code-line-numbers: "|5,24,26,29-30"
+#| filename: "example/_quarto.yml"
+#| eval: false
+#| file: example/_quarto.yml
+```
+
+:::
+
+::::
+
+## 翻訳ファイルを追加する
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| label: file-tree-orig
+#| echo: false
+dir_tree("example")
+```
+
+:::
+
+::: {.column width="50%"}
+```{r}
+#| label: add-index-ja
+#| include: false
+fs::file_copy("example-index-ja.qmd", "example/index.qmd", overwrite = TRUE)
+fs::file_copy("example-index-en.qmd", "example/index.en.qmd", overwrite = TRUE)
+```
+
+```{r}
+#| label: file-tree-orig-after-add
+#| echo: false
+dir_tree("example")
+```
+
+:::
+
+::::
+
+---
+
+:::: {.columns .medsmall}
+
+::: {.column width="50%"}
+```{r}
+#| label: show-index-orig
+#| filename: "example/index.qmd"
+#| eval: false
+#| file: example/index.qmd
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| label: show-index-ja
+#| filename: "example/index.en.qmd"
+#| eval: false
+#| file: example/index.en.qmd
+```
+
+:::
+
+::::
+
+## レンダーする
+
+注意：`quarto render`が使えません
+
+`[WARNING] Could not load translations for ja data file translations/ja.yaml not found`を無視して良い
+
+```{r}
+#| label: render
+render_website(project_path = "example")
+```
+
+## サーブする
+
+注意：`quarto preview`が使えません
+
+```{r}
+#| label: serve
+#| eval: false
+servr::httw("example/_site")
+```
+
+---
+
+<iframe src="https://swcarpentry-ja.github.io/" width="100%" height="500px"></iframe>
+
+[<https://swcarpentry-ja.github.io/>]{.large}
+
+## まとめ
+
+- `_quarto.yml`に`babelquarto`フィルドを加える
+- それぞれの`.qmd`ファイルの翻訳バージョンを加える
+  - `index.en.qmd`
+  - `about.en.qmd` など
+- レンダーには`babelquarto::render_website()`を使う
 
 ## profiles
 
 - Use for more complex setups
-
-# Local rendering
-
-- render function
-
-- httw function
 
 ## github action
 
