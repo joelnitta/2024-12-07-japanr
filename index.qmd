@@ -2,7 +2,7 @@
 format:
   revealjs:
     incremental: false
-    css: styles.css
+    theme: [default, custom.scss]
 execute: 
   echo: true
 ---
@@ -16,23 +16,39 @@ library(fs)
 suppressPackageStartupMessages(library(tidyverse))
 ```
 
-## babelquartoによる<br>quartoウエブサイトの<br>多言語化 {background-color="black" background-image="images/alexandre-debieve-UmX-OgGODfM-unsplash.jpg" background-size="contain" background-repeat="no-repeat" background-position="right"}
+## babelquartoによるquartoウエブサイトの多言語化 {.theme-slide1 .line}
+
+<br>
 
 ニッタ ジョエル
 
+<br>
+
+::: {.medium}
+
+<https://www.joelnitta.com>
+
+`Japan.R2024`
+
+:::
+
 ::: {.aside}
+
+::: {.small}
 
 Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E3%83%A9%E3%82%B8%E3%82%AA%E3%83%97%E3%83%AC%E3%83%BC%E3%83%A4%E3%83%BC%E3%83%AD%E3%83%83%E3%83%88-UmX-OgGODfM)
 
 :::
 
-## 自己紹介：ニッタ ジョエル
+:::
+
+## 自己紹介：ニッタ ジョエル {.line}
 
 - 千葉大学 准教授
 - シダ植物の進化や生態学
 - Rパッケージ開発（進化生態学系）
 
-## Quarto はすごいぞ
+## Quarto はすごいぞ {.line}
 
 :::: {.columns}
 
@@ -49,7 +65,7 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 
 ::::
 
-## Quarto の多言語機能がまだ出来ていない
+## Quarto の多言語機能がまだ出来ていない {.line}
 
 :::: {.columns}
 
@@ -67,7 +83,7 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 
 ::::
 
-## 注意
+## 注意 {.line}
 
 - いつか多言語機能がQuartoに加わる可能性があります
 
@@ -75,7 +91,7 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 
 - でも開発スクジュールが分かりませんので、多言語のニーズが今あれば使ってもいいと思います
 
-## `babelquarto`
+## `babelquarto` {.line}
 
 :::: {.columns}
 
@@ -99,7 +115,7 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 
 [<https://swcarpentry-ja.github.io/>]{.large}
 
-# babelquarto demo 
+# babelquarto demo {.line}
 
 ## 基本的なサイトを作る
 
@@ -192,7 +208,7 @@ register_further_languages(
 
 ::::
 
-## _quarto.ymlを編集する
+## `_quarto.yml`を編集する
 
 :::: {.columns .medsmall}
 
@@ -305,11 +321,11 @@ servr::httw("example/_site")
 
 ---
 
-<iframe src="https://swcarpentry-ja.github.io/" width="100%" height="500px"></iframe>
+<iframe src="https://joelnitta.github.io/example-babelquarto/" width="100%" height="500px"></iframe>
 
-[<https://swcarpentry-ja.github.io/>]{.large}
+<https://joelnitta.github.io/example-babelquarto/>
 
-## まとめ
+## まとめ {.line}
 
 - `_quarto.yml`に`babelquarto`フィルドを加える
 - それぞれの`.qmd`ファイルの翻訳バージョンを加える
