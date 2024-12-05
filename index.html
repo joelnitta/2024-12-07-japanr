@@ -197,7 +197,7 @@
 <p>ニッタ ジョエル</p>
 <p><br></p>
 <div class="medium">
-<p><a href="https://www.joelnitta.com" class="uri">https://www.joelnitta.com</a></p>
+<p><a href="https://joelnitta.github.io/2024-12-07-japanr" class="uri">https://joelnitta.github.io/2024-12-07-japanr</a></p>
 <p><code>Japan.R2024</code></p>
 </div>
 
@@ -206,13 +206,19 @@
 <p>Image: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E3%83%A9%E3%82%B8%E3%82%AA%E3%83%97%E3%83%AC%E3%83%BC%E3%83%A4%E3%83%BC%E3%83%AD%E3%83%83%E3%83%88-UmX-OgGODfM">Alexandre Debiève on Unsplash</a></p>
 </div>
 </div></aside></section>
-<section id="自己紹介ニッタ-ジョエル" class="slide level2 line">
-<h2>自己紹介：ニッタ ジョエル</h2>
+<section id="自己紹介joelnitta" class="slide level2 line">
+<h2>自己紹介：<code>@joelnitta</code></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
 <li>千葉大学 准教授</li>
 <li>シダ植物の進化や生態学</li>
 <li>Rパッケージ開発（進化生態学系）</li>
 </ul>
+<p><a href="https://www.joelnitta.com" class="uri">https://www.joelnitta.com</a></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="https://github.com/joelnitta/joelnitta-site/blob/master/static/media/headers/research_img2.jpg?raw=true" alt="Image of Joel Nitta in field" height="450"></p>
+</div></div>
 </section>
 <section id="quarto-はすごいぞ" class="slide level2 line">
 <h2>Quarto はすごいぞ</h2>
@@ -289,42 +295,30 @@
 <span id="cb1-6"><a href=""></a>  <span class="at">quiet =</span> <span class="cn">TRUE</span></span>
 <span id="cb1-7"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div><div class="column medsmall" style="width:50%;">
+</div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>example/_quarto.yml</strong></pre>
-</div>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>project<span class="sc">:</span></span>
-<span id="cb2-2"><a href=""></a>  type<span class="sc">:</span> website</span>
-<span id="cb2-3"><a href=""></a></span>
-<span id="cb2-4"><a href=""></a>website<span class="sc">:</span></span>
-<span id="cb2-5"><a href=""></a>  title<span class="sc">:</span> <span class="st">"example"</span></span>
-<span id="cb2-6"><a href=""></a>  navbar<span class="sc">:</span></span>
-<span id="cb2-7"><a href=""></a>    left<span class="sc">:</span></span>
-<span id="cb2-8"><a href=""></a>      <span class="sc">-</span> href<span class="sc">:</span> index.qmd</span>
-<span id="cb2-9"><a href=""></a>        text<span class="sc">:</span> Home</span>
-<span id="cb2-10"><a href=""></a>      <span class="sc">-</span> about.qmd</span>
-<span id="cb2-11"><a href=""></a></span>
-<span id="cb2-12"><a href=""></a>format<span class="sc">:</span></span>
-<span id="cb2-13"><a href=""></a>  html<span class="sc">:</span></span>
-<span id="cb2-14"><a href=""></a>    theme<span class="sc">:</span> cosmo</span>
-<span id="cb2-15"><a href=""></a>    css<span class="sc">:</span> styles.css</span>
-<span id="cb2-16"><a href=""></a>    toc<span class="sc">:</span> true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>example
+├── _quarto.yml
+├── about.qmd
+├── index.qmd
+└── styles.css</code></pre>
 </div>
 </div>
 </div></div>
 </section>
-<section id="主言語を登録する" class="slide level2">
-<h2>主言語を登録する</h2>
+<section id="基本的なサイトを作る-1" class="slide level2">
+<h2>基本的なサイトを作る</h2>
 <div class="columns">
 <div class="column medsmall" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">library</span>(babelquarto)</span>
-<span id="cb3-2"><a href=""></a><span class="fu">register_main_language</span>(</span>
-<span id="cb3-3"><a href=""></a>  <span class="at">main_language =</span> <span class="st">"ja"</span>,</span>
-<span id="cb3-4"><a href=""></a>  <span class="at">project_path =</span> <span class="st">"example"</span></span>
-<span id="cb3-5"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">library</span>(quarto)</span>
+<span id="cb3-2"><a href=""></a><span class="fu">quarto_create_project</span>(</span>
+<span id="cb3-3"><a href=""></a>  <span class="at">name =</span> <span class="st">"example"</span>,</span>
+<span id="cb3-4"><a href=""></a>  <span class="at">type =</span> <span class="st">"website"</span>,</span>
+<span id="cb3-5"><a href=""></a>  <span class="at">no_prompt =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb3-6"><a href=""></a>  <span class="at">quiet =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-7"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column medsmall" style="width:50%;">
 <div class="cell">
@@ -347,29 +341,19 @@
 <span id="cb4-13"><a href=""></a>  html<span class="sc">:</span></span>
 <span id="cb4-14"><a href=""></a>    theme<span class="sc">:</span> cosmo</span>
 <span id="cb4-15"><a href=""></a>    css<span class="sc">:</span> styles.css</span>
-<span id="cb4-16"><a href=""></a>    toc<span class="sc">:</span> true</span>
-<span id="cb4-17"><a href=""></a></span>
-<span id="cb4-18"><a href=""></a></span>
-<span id="cb4-19"><a href=""></a></span>
-<span id="cb4-20"><a href=""></a></span>
-<span id="cb4-21"><a href=""></a>babelquarto<span class="sc">:</span></span>
-<span id="cb4-22"><a href=""></a>  languagecodes<span class="sc">:</span></span>
-<span id="cb4-23"><a href=""></a>  <span class="sc">-</span> name<span class="sc">:</span> ja</span>
-<span id="cb4-24"><a href=""></a>    text<span class="sc">:</span> <span class="st">"Version in ja"</span></span>
-<span id="cb4-25"><a href=""></a>  mainlanguage<span class="sc">:</span> <span class="st">'ja'</span></span>
-<span id="cb4-26"><a href=""></a>lang<span class="sc">:</span> ja</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-16"><a href=""></a>    toc<span class="sc">:</span> true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div></div>
 </section>
-<section id="翻訳言語を追加する" class="slide level2">
-<h2>翻訳言語を追加する</h2>
+<section id="主言語を登録する" class="slide level2">
+<h2>主言語を登録する</h2>
 <div class="columns">
 <div class="column medsmall" style="width:50%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">library</span>(babelquarto)</span>
-<span id="cb5-2"><a href=""></a><span class="fu">register_further_languages</span>(</span>
-<span id="cb5-3"><a href=""></a>  <span class="at">further_languages =</span> <span class="fu">c</span>(<span class="st">"en"</span>),</span>
+<span id="cb5-2"><a href=""></a><span class="fu">register_main_language</span>(</span>
+<span id="cb5-3"><a href=""></a>  <span class="at">main_language =</span> <span class="st">"ja"</span>,</span>
 <span id="cb5-4"><a href=""></a>  <span class="at">project_path =</span> <span class="st">"example"</span></span>
 <span id="cb5-5"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -379,7 +363,7 @@
 <div class="code-with-filename-file">
 <pre><strong>example/_quarto.yml</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>project<span class="sc">:</span></span>
+<div class="sourceCode cell-code" id="cb6" data-code-line-numbers="|21-26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>project<span class="sc">:</span></span>
 <span id="cb6-2"><a href=""></a>  type<span class="sc">:</span> website</span>
 <span id="cb6-3"><a href=""></a></span>
 <span id="cb6-4"><a href=""></a>website<span class="sc">:</span></span>
@@ -401,74 +385,36 @@
 <span id="cb6-20"><a href=""></a></span>
 <span id="cb6-21"><a href=""></a>babelquarto<span class="sc">:</span></span>
 <span id="cb6-22"><a href=""></a>  languagecodes<span class="sc">:</span></span>
-<span id="cb6-23"><a href=""></a>  <span class="sc">-</span> name<span class="sc">:</span> en</span>
-<span id="cb6-24"><a href=""></a>    text<span class="sc">:</span> <span class="st">"Version in en"</span></span>
-<span id="cb6-25"><a href=""></a>  <span class="sc">-</span> name<span class="sc">:</span> ja</span>
-<span id="cb6-26"><a href=""></a>    text<span class="sc">:</span> <span class="st">"Version in ja"</span></span>
-<span id="cb6-27"><a href=""></a>  mainlanguage<span class="sc">:</span> <span class="st">'ja'</span></span>
-<span id="cb6-28"><a href=""></a>  languages<span class="sc">:</span> [<span class="st">'en'</span>]</span>
-<span id="cb6-29"><a href=""></a>title<span class="sc">-</span>en<span class="sc">:</span> title <span class="cf">in</span> en</span>
-<span id="cb6-30"><a href=""></a>description<span class="sc">-</span>en<span class="sc">:</span> description <span class="cf">in</span> en</span>
-<span id="cb6-31"><a href=""></a>author<span class="sc">-</span>en<span class="sc">:</span> author <span class="cf">in</span> en</span>
-<span id="cb6-32"><a href=""></a>lang<span class="sc">:</span> ja</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-23"><a href=""></a>  <span class="sc">-</span> name<span class="sc">:</span> ja</span>
+<span id="cb6-24"><a href=""></a>    text<span class="sc">:</span> <span class="st">"Version in ja"</span></span>
+<span id="cb6-25"><a href=""></a>  mainlanguage<span class="sc">:</span> <span class="st">'ja'</span></span>
+<span id="cb6-26"><a href=""></a>lang<span class="sc">:</span> ja</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div></div>
 </section>
-<section id="quarto.ymlを編集する" class="slide level2">
-<h2><code>_quarto.yml</code>を編集する</h2>
-<div class="columns medsmall">
-<div class="column" style="width:50%;">
+<section id="翻訳言語を追加する" class="slide level2">
+<h2>翻訳言語を追加する</h2>
+<div class="columns">
+<div class="column medsmall" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">library</span>(babelquarto)</span>
+<span id="cb7-2"><a href=""></a><span class="fu">register_further_languages</span>(</span>
+<span id="cb7-3"><a href=""></a>  <span class="at">further_languages =</span> <span class="fu">c</span>(<span class="st">"en"</span>),</span>
+<span id="cb7-4"><a href=""></a>  <span class="at">project_path =</span> <span class="st">"example"</span></span>
+<span id="cb7-5"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column medsmall" style="width:50%;">
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>example/_quarto.yml</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7" data-code-line-numbers="|5,24,26,29-30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>project<span class="sc">:</span></span>
-<span id="cb7-2"><a href=""></a>  type<span class="sc">:</span> website</span>
-<span id="cb7-3"><a href=""></a></span>
-<span id="cb7-4"><a href=""></a>website<span class="sc">:</span></span>
-<span id="cb7-5"><a href=""></a>  title<span class="sc">:</span> <span class="st">"example"</span></span>
-<span id="cb7-6"><a href=""></a>  navbar<span class="sc">:</span></span>
-<span id="cb7-7"><a href=""></a>    left<span class="sc">:</span></span>
-<span id="cb7-8"><a href=""></a>      <span class="sc">-</span> href<span class="sc">:</span> index.qmd</span>
-<span id="cb7-9"><a href=""></a>        text<span class="sc">:</span> Home</span>
-<span id="cb7-10"><a href=""></a>      <span class="sc">-</span> about.qmd</span>
-<span id="cb7-11"><a href=""></a></span>
-<span id="cb7-12"><a href=""></a>format<span class="sc">:</span></span>
-<span id="cb7-13"><a href=""></a>  html<span class="sc">:</span></span>
-<span id="cb7-14"><a href=""></a>    theme<span class="sc">:</span> cosmo</span>
-<span id="cb7-15"><a href=""></a>    css<span class="sc">:</span> styles.css</span>
-<span id="cb7-16"><a href=""></a>    toc<span class="sc">:</span> true</span>
-<span id="cb7-17"><a href=""></a></span>
-<span id="cb7-18"><a href=""></a></span>
-<span id="cb7-19"><a href=""></a></span>
-<span id="cb7-20"><a href=""></a></span>
-<span id="cb7-21"><a href=""></a>babelquarto<span class="sc">:</span></span>
-<span id="cb7-22"><a href=""></a>  languagecodes<span class="sc">:</span></span>
-<span id="cb7-23"><a href=""></a>  <span class="sc">-</span> name<span class="sc">:</span> en</span>
-<span id="cb7-24"><a href=""></a>    text<span class="sc">:</span> <span class="st">"Version in en"</span></span>
-<span id="cb7-25"><a href=""></a>  <span class="sc">-</span> name<span class="sc">:</span> ja</span>
-<span id="cb7-26"><a href=""></a>    text<span class="sc">:</span> <span class="st">"Version in ja"</span></span>
-<span id="cb7-27"><a href=""></a>  mainlanguage<span class="sc">:</span> <span class="st">'ja'</span></span>
-<span id="cb7-28"><a href=""></a>  languages<span class="sc">:</span> [<span class="st">'en'</span>]</span>
-<span id="cb7-29"><a href=""></a>title<span class="sc">-</span>en<span class="sc">:</span> title <span class="cf">in</span> en</span>
-<span id="cb7-30"><a href=""></a>description<span class="sc">-</span>en<span class="sc">:</span> description <span class="cf">in</span> en</span>
-<span id="cb7-31"><a href=""></a>author<span class="sc">-</span>en<span class="sc">:</span> author <span class="cf">in</span> en</span>
-<span id="cb7-32"><a href=""></a>lang<span class="sc">:</span> ja</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>example/_quarto.yml</strong></pre>
-</div>
-<div class="sourceCode cell-code" id="cb8" data-code-line-numbers="|5,24,26,29-30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>project<span class="sc">:</span></span>
+<div class="sourceCode cell-code" id="cb8" data-code-line-numbers="|21-32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>project<span class="sc">:</span></span>
 <span id="cb8-2"><a href=""></a>  type<span class="sc">:</span> website</span>
 <span id="cb8-3"><a href=""></a></span>
 <span id="cb8-4"><a href=""></a>website<span class="sc">:</span></span>
-<span id="cb8-5"><a href=""></a>  title<span class="sc">:</span> <span class="st">"テスト用のサイト"</span></span>
+<span id="cb8-5"><a href=""></a>  title<span class="sc">:</span> <span class="st">"example"</span></span>
 <span id="cb8-6"><a href=""></a>  navbar<span class="sc">:</span></span>
 <span id="cb8-7"><a href=""></a>    left<span class="sc">:</span></span>
 <span id="cb8-8"><a href=""></a>      <span class="sc">-</span> href<span class="sc">:</span> index.qmd</span>
@@ -487,15 +433,101 @@
 <span id="cb8-21"><a href=""></a>babelquarto<span class="sc">:</span></span>
 <span id="cb8-22"><a href=""></a>  languagecodes<span class="sc">:</span></span>
 <span id="cb8-23"><a href=""></a>  <span class="sc">-</span> name<span class="sc">:</span> en</span>
-<span id="cb8-24"><a href=""></a>    text<span class="sc">:</span> <span class="st">"English"</span></span>
+<span id="cb8-24"><a href=""></a>    text<span class="sc">:</span> <span class="st">"Version in en"</span></span>
 <span id="cb8-25"><a href=""></a>  <span class="sc">-</span> name<span class="sc">:</span> ja</span>
-<span id="cb8-26"><a href=""></a>    text<span class="sc">:</span> <span class="st">"日本語"</span></span>
+<span id="cb8-26"><a href=""></a>    text<span class="sc">:</span> <span class="st">"Version in ja"</span></span>
 <span id="cb8-27"><a href=""></a>  mainlanguage<span class="sc">:</span> <span class="st">'ja'</span></span>
 <span id="cb8-28"><a href=""></a>  languages<span class="sc">:</span> [<span class="st">'en'</span>]</span>
-<span id="cb8-29"><a href=""></a>title<span class="sc">-</span>en<span class="sc">:</span> Test Site</span>
-<span id="cb8-30"><a href=""></a>description<span class="sc">-</span>en<span class="sc">:</span> My test website</span>
-<span id="cb8-31"><a href=""></a>author<span class="sc">-</span>en<span class="sc">:</span> Joel Nitta</span>
+<span id="cb8-29"><a href=""></a>title<span class="sc">-</span>en<span class="sc">:</span> title <span class="cf">in</span> en</span>
+<span id="cb8-30"><a href=""></a>description<span class="sc">-</span>en<span class="sc">:</span> description <span class="cf">in</span> en</span>
+<span id="cb8-31"><a href=""></a>author<span class="sc">-</span>en<span class="sc">:</span> author <span class="cf">in</span> en</span>
 <span id="cb8-32"><a href=""></a>lang<span class="sc">:</span> ja</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="quarto.ymlを編集する" class="slide level2">
+<h2><code>_quarto.yml</code>を編集する</h2>
+<div class="columns medsmall">
+<div class="column" style="width:48%;">
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>example/_quarto.yml</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9" data-code-line-numbers="|5,24,26,29-30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a>project<span class="sc">:</span></span>
+<span id="cb9-2"><a href=""></a>  type<span class="sc">:</span> website</span>
+<span id="cb9-3"><a href=""></a></span>
+<span id="cb9-4"><a href=""></a>website<span class="sc">:</span></span>
+<span id="cb9-5"><a href=""></a>  title<span class="sc">:</span> <span class="st">"example"</span></span>
+<span id="cb9-6"><a href=""></a>  navbar<span class="sc">:</span></span>
+<span id="cb9-7"><a href=""></a>    left<span class="sc">:</span></span>
+<span id="cb9-8"><a href=""></a>      <span class="sc">-</span> href<span class="sc">:</span> index.qmd</span>
+<span id="cb9-9"><a href=""></a>        text<span class="sc">:</span> Home</span>
+<span id="cb9-10"><a href=""></a>      <span class="sc">-</span> about.qmd</span>
+<span id="cb9-11"><a href=""></a></span>
+<span id="cb9-12"><a href=""></a>format<span class="sc">:</span></span>
+<span id="cb9-13"><a href=""></a>  html<span class="sc">:</span></span>
+<span id="cb9-14"><a href=""></a>    theme<span class="sc">:</span> cosmo</span>
+<span id="cb9-15"><a href=""></a>    css<span class="sc">:</span> styles.css</span>
+<span id="cb9-16"><a href=""></a>    toc<span class="sc">:</span> true</span>
+<span id="cb9-17"><a href=""></a></span>
+<span id="cb9-18"><a href=""></a></span>
+<span id="cb9-19"><a href=""></a></span>
+<span id="cb9-20"><a href=""></a></span>
+<span id="cb9-21"><a href=""></a>babelquarto<span class="sc">:</span></span>
+<span id="cb9-22"><a href=""></a>  languagecodes<span class="sc">:</span></span>
+<span id="cb9-23"><a href=""></a>  <span class="sc">-</span> name<span class="sc">:</span> en</span>
+<span id="cb9-24"><a href=""></a>    text<span class="sc">:</span> <span class="st">"Version in en"</span></span>
+<span id="cb9-25"><a href=""></a>  <span class="sc">-</span> name<span class="sc">:</span> ja</span>
+<span id="cb9-26"><a href=""></a>    text<span class="sc">:</span> <span class="st">"Version in ja"</span></span>
+<span id="cb9-27"><a href=""></a>  mainlanguage<span class="sc">:</span> <span class="st">'ja'</span></span>
+<span id="cb9-28"><a href=""></a>  languages<span class="sc">:</span> [<span class="st">'en'</span>]</span>
+<span id="cb9-29"><a href=""></a>title<span class="sc">-</span>en<span class="sc">:</span> title <span class="cf">in</span> en</span>
+<span id="cb9-30"><a href=""></a>description<span class="sc">-</span>en<span class="sc">:</span> description <span class="cf">in</span> en</span>
+<span id="cb9-31"><a href=""></a>author<span class="sc">-</span>en<span class="sc">:</span> author <span class="cf">in</span> en</span>
+<span id="cb9-32"><a href=""></a>lang<span class="sc">:</span> ja</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div><div class="column center large" style="width:4%;">
+<p><strong>→</strong></p>
+</div><div class="column" style="width:48%;">
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>example/_quarto.yml</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10" data-code-line-numbers="|8-9,5,23,25,28-29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a>project<span class="sc">:</span></span>
+<span id="cb10-2"><a href=""></a>  type<span class="sc">:</span> website</span>
+<span id="cb10-3"><a href=""></a></span>
+<span id="cb10-4"><a href=""></a>website<span class="sc">:</span></span>
+<span id="cb10-5"><a href=""></a>  title<span class="sc">:</span> <span class="st">"テスト用のサイト"</span></span>
+<span id="cb10-6"><a href=""></a>  navbar<span class="sc">:</span></span>
+<span id="cb10-7"><a href=""></a>    left<span class="sc">:</span></span>
+<span id="cb10-8"><a href=""></a>      <span class="sc">-</span> index.qmd</span>
+<span id="cb10-9"><a href=""></a>      <span class="sc">-</span> about.qmd</span>
+<span id="cb10-10"><a href=""></a></span>
+<span id="cb10-11"><a href=""></a>format<span class="sc">:</span></span>
+<span id="cb10-12"><a href=""></a>  html<span class="sc">:</span></span>
+<span id="cb10-13"><a href=""></a>    theme<span class="sc">:</span> cosmo</span>
+<span id="cb10-14"><a href=""></a>    css<span class="sc">:</span> styles.css</span>
+<span id="cb10-15"><a href=""></a>    toc<span class="sc">:</span> true</span>
+<span id="cb10-16"><a href=""></a></span>
+<span id="cb10-17"><a href=""></a></span>
+<span id="cb10-18"><a href=""></a></span>
+<span id="cb10-19"><a href=""></a></span>
+<span id="cb10-20"><a href=""></a>babelquarto<span class="sc">:</span></span>
+<span id="cb10-21"><a href=""></a>  languagecodes<span class="sc">:</span></span>
+<span id="cb10-22"><a href=""></a>  <span class="sc">-</span> name<span class="sc">:</span> en</span>
+<span id="cb10-23"><a href=""></a>    text<span class="sc">:</span> <span class="st">"English"</span></span>
+<span id="cb10-24"><a href=""></a>  <span class="sc">-</span> name<span class="sc">:</span> ja</span>
+<span id="cb10-25"><a href=""></a>    text<span class="sc">:</span> <span class="st">"日本語"</span></span>
+<span id="cb10-26"><a href=""></a>  mainlanguage<span class="sc">:</span> <span class="st">'ja'</span></span>
+<span id="cb10-27"><a href=""></a>  languages<span class="sc">:</span> [<span class="st">'en'</span>]</span>
+<span id="cb10-28"><a href=""></a>title<span class="sc">-</span>en<span class="sc">:</span> Test Site</span>
+<span id="cb10-29"><a href=""></a>description<span class="sc">-</span>en<span class="sc">:</span> My test website</span>
+<span id="cb10-30"><a href=""></a>author<span class="sc">-</span>en<span class="sc">:</span> Joel Nitta</span>
+<span id="cb10-31"><a href=""></a>lang<span class="sc">:</span> ja</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div></div>
@@ -503,7 +535,7 @@
 <section id="翻訳ファイルを追加する" class="slide level2">
 <h2>翻訳ファイルを追加する</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:30%;">
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>example
@@ -513,11 +545,14 @@
 └── styles.css</code></pre>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
+</div><div class="column center large" style="width:20%;">
+<p><strong>→</strong></p>
+</div><div class="column" style="width:46%;">
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>example
 ├── _quarto.yml
+├── about.en.qmd
 ├── about.qmd
 ├── index.en.qmd
 ├── index.qmd
@@ -535,13 +570,13 @@
 <div class="code-with-filename-file">
 <pre><strong>example/index.qmd</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="sc">---</span></span>
-<span id="cb11-2"><a href=""></a>title<span class="sc">:</span> <span class="st">"例"</span></span>
-<span id="cb11-3"><a href=""></a><span class="sc">---</span></span>
-<span id="cb11-4"><a href=""></a></span>
-<span id="cb11-5"><a href=""></a>これは Quarto のウェブサイトです。</span>
-<span id="cb11-6"><a href=""></a></span>
-<span id="cb11-7"><a href=""></a>Quarto のウェブサイトについて詳しく知りたい場合は、<span class="sc">&lt;</span>https<span class="sc">:</span><span class="er">//</span>quarto.org<span class="sc">/</span>docs<span class="sc">/</span>websites<span class="sc">&gt;</span> をご覧ください。</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="sc">---</span></span>
+<span id="cb13-2"><a href=""></a>title<span class="sc">:</span> <span class="st">"ホーム"</span></span>
+<span id="cb13-3"><a href=""></a><span class="sc">---</span></span>
+<span id="cb13-4"><a href=""></a></span>
+<span id="cb13-5"><a href=""></a>これは Quarto のウェブサイトです。</span>
+<span id="cb13-6"><a href=""></a></span>
+<span id="cb13-7"><a href=""></a>Quarto のウェブサイトについて詳しく知りたい場合は、<span class="sc">&lt;</span>https<span class="sc">:</span><span class="er">//</span>quarto.org<span class="sc">/</span>docs<span class="sc">/</span>websites<span class="sc">&gt;</span> をご覧ください。</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -550,13 +585,13 @@
 <div class="code-with-filename-file">
 <pre><strong>example/index.en.qmd</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="sc">---</span></span>
-<span id="cb12-2"><a href=""></a>title<span class="sc">:</span> <span class="st">"Example"</span></span>
-<span id="cb12-3"><a href=""></a><span class="sc">---</span></span>
-<span id="cb12-4"><a href=""></a></span>
-<span id="cb12-5"><a href=""></a>This is a Quarto website.</span>
-<span id="cb12-6"><a href=""></a></span>
-<span id="cb12-7"><a href=""></a>To learn more about Quarto websites visit <span class="sc">&lt;</span>https<span class="sc">:</span><span class="er">//</span>quarto.org<span class="sc">/</span>docs<span class="sc">/</span>websites<span class="sc">&gt;</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a><span class="sc">---</span></span>
+<span id="cb14-2"><a href=""></a>title<span class="sc">:</span> <span class="st">"Home"</span></span>
+<span id="cb14-3"><a href=""></a><span class="sc">---</span></span>
+<span id="cb14-4"><a href=""></a></span>
+<span id="cb14-5"><a href=""></a>This is a Quarto website.</span>
+<span id="cb14-6"><a href=""></a></span>
+<span id="cb14-7"><a href=""></a>To learn more about Quarto websites visit <span class="sc">&lt;</span>https<span class="sc">:</span><span class="er">//</span>quarto.org<span class="sc">/</span>docs<span class="sc">/</span>websites<span class="sc">&gt;</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div></div>
@@ -565,7 +600,7 @@
 <h2>レンダーする</h2>
 <p>注意：<code>quarto render</code>が使えません</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="fu">render_website</span>(<span class="at">project_path =</span> <span class="st">"example"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">render_website</span>(<span class="at">project_path =</span> <span class="st">"example"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1m[34m
 [1/2] about.qmd[39m[22m
@@ -574,40 +609,11 @@
 
 Output created: _site/index.html
 
-[1mpandoc [22m
-  to: html
-  output-file: index.html
-  standalone: true
-  title-prefix: Test Site
-  section-divs: true
-  html-math-method: mathjax
-  wrap: none
-  default-image-extension: png
-  css:
-    - styles.css
-  toc: true
-  
-[1mmetadata[22m
-  document-css: false
-  link-citations: true
-  date-format: long
-  lang: en
-  babelquarto:
-    languagecodes:
-      - name: en
-        text: English
-      - name: ja
-        text: 日本語
-    mainlanguage: ja
-    languages:
-      - en
-  title-en: Test Site
-  description-en: My test website
-  author-en: Joel Nitta
-  lang-en: 'yes'
-  theme: cosmo
-  title: Example
-  
+[1m[34m
+[1/2] about.qmd[39m[22m
+[1m[34m
+[2/2] index.qmd[39m[22m
+
 Output created: _site/index.html</code></pre>
 </div>
 </div>
@@ -616,7 +622,7 @@ Output created: _site/index.html</code></pre>
 <h2>サーブする</h2>
 <p>注意：<code>quarto preview</code>が使えません</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a>servr<span class="sc">::</span><span class="fu">httw</span>(<span class="st">"example/_site"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a>servr<span class="sc">::</span><span class="fu">httw</span>(<span class="st">"example/_site"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <iframe src="https://joelnitta.github.io/example-babelquarto/" width="100%" height="400px">
 </iframe>
