@@ -93,6 +93,16 @@
       ],
       "Hash": "cad6cf7f1d5f6e906700b9d3e718c796"
     },
+    "assertthat": {
+      "Package": "assertthat",
+      "Version": "0.2.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "tools"
+      ],
+      "Hash": "50c838a310445e954bc13f26f26a6ecf"
+    },
     "babelquarto": {
       "Package": "babelquarto",
       "Version": "0.0.0.9000",
@@ -1034,6 +1044,19 @@
         "vctrs"
       ],
       "Hash": "1cba04a4e9414bdefc9dcaa99649a8dc"
+    },
+    "qrcode": {
+      "Package": "qrcode",
+      "Version": "0.3.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "assertthat",
+        "stats",
+        "utils"
+      ],
+      "Hash": "e74a28e63bd943ef0c662d2feffdcb41"
     },
     "quarto": {
       "Package": "quarto",

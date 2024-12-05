@@ -13,7 +13,21 @@ execute:
 library(quarto)
 library(babelquarto)
 library(fs)
+library(qrcode)
 suppressPackageStartupMessages(library(tidyverse))
+```
+
+```{r}
+#| label: qr-code
+#| eval: false
+
+# generate QR code
+qrcode::qr_code("https://joelnitta.github.io/2024-12-07-japanr") |>
+  qrcode::generate_svg(
+    filename = "images/qrcode.svg",
+    foreground = "#00d1c1",
+    background = "#1F2121"
+    )
 ```
 
 ## babelquartoによるQuartoウェブサイトの多言語化 {.theme-slide1 .line}
