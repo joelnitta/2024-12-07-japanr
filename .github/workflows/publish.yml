@@ -16,6 +16,8 @@ jobs:
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.6.39
 
       # install libcurl, needed for curl R package
       # libfribidi-dev libharfbuzz-dev for textshaping
