@@ -16,7 +16,7 @@ library(fs)
 suppressPackageStartupMessages(library(tidyverse))
 ```
 
-## babelquartoによるquartoウエブサイトの多言語化 {.theme-slide1 .line}
+## babelquartoによるQuartoウェブサイトの多言語化 {.theme-slide1 .line}
 
 <br>
 
@@ -29,6 +29,8 @@ suppressPackageStartupMessages(library(tidyverse))
 <https://joelnitta.github.io/2024-12-07-japanr>
 
 `Japan.R2024`
+
+![](images/qrcode.svg){.absolute bottom=30 right=330 width="200" height="200"}
 
 :::
 
@@ -49,8 +51,8 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 ::: {.column width="50%"}
 
 - 千葉大学 准教授
-- シダ植物の進化や生態学
-- Rパッケージ開発（進化生態学系）
+- シダ植物の進化と生態学
+- Rパッケージ開発（進化生態学向け）
 
 <https://www.joelnitta.com>
 :::
@@ -66,7 +68,7 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 :::: {.columns}
 
 ::: {.column width="40%"}
-- QuartoはRやPythonの計算結果を直接文章に入れるツール
+- QuartoはRやPythonの計算結果を直接文章に入れるツールです。
   - HTML（ウェブサイト、スライド、本）
   - PDF
   - MS Word
@@ -78,14 +80,14 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 
 ::::
 
-## Quarto の多言語機能がまだ出来ていない {.line}
+## Quartoの多言語機能は未完成 {.line}
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-- しかし、Quartoは比較的新しいため、欠けている機能もあります。
+- しかし、Quartoは比較的新しいため、まだ欠けている機能があります。
 
-- 備え付けで**多言語機能**がありません
+- 標準では**多言語機能**がありません。
 :::
 
 ::: {.column width="50%"}
@@ -101,11 +103,11 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 :::: {.columns}
 
 ::: {.column width="50%"}
-- Quarto BookかWebsiteの**各言語**のバージョンを**レンダーする**
+- Quarto BookやWebsiteの**各言語**のバージョンを**レンダーする**。
 
 - （翻訳とは別）
 
-- Quartoのpluginではなく、Rパッケージ
+- Quartoのプラグインではなく、Rパッケージです。
 :::
 
 ::: {.column width="50%"}
@@ -124,11 +126,11 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 
 ## 注意 {.line}
 
-- いつか多言語機能がQuartoに加わる可能性があります。
+- 将来的にQuartoに多言語機能が加わる可能性があります。
 
-- その場合、`babelquarto`は要らなくなるでしょう。
+- その場合、`babelquarto`は不要になるでしょう。
 
-- でも開発スクジュールが分かりませんので、多言語のニーズが今あれば使ってもいいと思います。
+- しかし、現時点で多言語のニーズがある場合は十分活用できます。
 
 # babelquarto demo {.line}
 
@@ -383,7 +385,7 @@ servr::httw("example/_site")
 
 ## まとめ {.line}
 
-- `_quarto.yml`に`babelquarto:`フィルドを加える
+- `_quarto.yml`に`babelquarto:`フィールドを加える
 - それぞれの`.qmd`ファイルの翻訳バージョンを加える
   - `index.en.qmd`
   - `about.en.qmd` など
@@ -391,11 +393,27 @@ servr::httw("example/_site")
 
 ## 内容の自動翻訳 {.line}
 
+- Markdownやコードごと翻訳されると困ります。
+
+. . .
+
+- 「ChatGPT、これを翻訳してね」
+
+[`::: {.columns}`]{.medlarge}
+
+. . .
+
+[`::: {.列}`]{.medlarge}
+
+. . .
+
+- いや、だからそうではなく・・
+
+## 内容の自動翻訳 {.line}
+
 :::: {.columns}
 
 ::: {.column width="50%"}
-- Markdownやコードごと翻訳されると困る
-
 - **解決策 ①**：Custom GPT。プロンプトでMarkdownをいじらないように頼む。
 :::
 
@@ -416,9 +434,7 @@ servr::httw("example/_site")
 :::: {.columns}
 
 ::: {.column width="50%"}
-- Markdownやコードごと翻訳されると困る
-
-- **解決策 ②**：`babeldown`。DeepLに送る前にMarkdownをXMLにパースすることによって内容だけを翻訳する
+- **解決策 ②**：`babeldown`。DeepLに送る前にMarkdownをXMLにパースすることで内容だけを翻訳する。
 :::
 
 ::: {.column width="50%"}
@@ -434,11 +450,11 @@ servr::httw("example/_site")
 
 ::: {.column width="50%"}
 
-- 元の文章が変わると、翻訳を更新する必要がある
+- 元の文章が変わると翻訳を更新する必要があります。
 
-- `PO`ファイルを使うと各文章とそれに対する翻訳を管理できる
+- `PO`ファイルの使用によって、各文章とその翻訳を管理できます。
 
-- CrowdinやTransifexなど、クラウドツールが裏で`PO`ファイルを使っているものが多い
+- CrowdinやTransifexなどのクラウドツールは、`PO`ファイルを裏で使っています。
 :::
 
 ::: {.column width="50%"}
@@ -468,13 +484,12 @@ servr::httw("example/_site")
 
 ::::
 
-
 ## まとめ（2） {.line}
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-多言語化はアケセスを増やすためにだけでなく、コミュニティを育むためにも大事です！
+多言語化はアクセスを増やすためだけでなく、コミュニティを育むためにも重要です！
 
 [Enjoy!]{.medlarge}
 :::
