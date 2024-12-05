@@ -67,7 +67,7 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 
 - 千葉大学 准教授
 - シダ植物の進化と生態学
-- Rパッケージ開発（進化生態学向け）
+- Rパッケージ開発<br>（進化生態学向け）
 
 <https://www.joelnitta.com>
 :::
@@ -83,7 +83,7 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 :::: {.columns}
 
 ::: {.column width="40%"}
-- QuartoはRやPythonの計算結果を直接文章に入れるツールです。
+- QuartoはRやPythonの計算結果を直接文章に入れるツール。
   - HTML（ウェブサイト、スライド、本）
   - PDF
   - MS Word
@@ -103,9 +103,9 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 :::: {.columns}
 
 ::: {.column width="50%"}
-- しかし、Quartoは比較的新しいため、まだ欠けている機能があります。
+- しかし、Quartoは比較的新しいため、まだ欠けて<br>いる機能があります。
 
-- 標準では**多言語機能**がありません。
+- 標準では**多言語機能**が<br>ありません。
 :::
 
 ::: {.column width="50%"}
@@ -143,7 +143,7 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 
 ## 注意 {.line}
 
-- 将来的にQuartoに多言語機能が加わる可能性があります。
+- 将来的にQuartoに多言語機能が加わる可能性が<br>あります。
 
 - その場合、`babelquarto`は不要になるでしょう。
 
@@ -467,7 +467,7 @@ servr::httw("example/_site")
 
 ::: {.column width="50%"}
 
-- 元の文章が変わると翻訳を更新する必要があります。
+- 元の文章が変わると翻訳を更新する<br>必要があります。
 
 - `PO`ファイルの使用によって、各文章とその翻訳を管理できます。
 
@@ -505,13 +505,13 @@ servr::httw("example/_site")
 
 :::: {.columns}
 
-::: {.column width="50%"}
-多言語化はアクセスを増やすためだけでなく、コミュニティを育むためにも重要です！
+::: {.column width="70%"}
+多言語化は**アクセス**を増やすためだけでなく、**コミュニティを育む**ためにも重要です！
 
 [Enjoy!]{.medlarge}
 :::
 
-::: {.column width="40%"}
+::: {.column width="30%"}
 ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjc1QFOdIIO1Sp_7D4tRBG7frYYTvm_wAv9Swi1qvosxV3b34vBm7f2I5n9SEw-yjQm9LWxo-8h7lnSD7JApMNCQaCv1qtT_WysBClnhOFFPUzdNRkgvH6qaJpGNoW5kg36Wq3DSLhyphenhyphenoI/s800/tree_seichou02.png){fig-align="center"}
 :::
 
