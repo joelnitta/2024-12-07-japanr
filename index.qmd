@@ -20,6 +20,7 @@ suppressPackageStartupMessages(library(tidyverse))
 ```{r}
 #| label: qr-code
 #| eval: false
+#| echo: false
 
 # generate QR code
 qrcode::qr_code("https://joelnitta.github.io/2024-12-07-japanr") |>
