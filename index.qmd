@@ -26,7 +26,7 @@ suppressPackageStartupMessages(library(tidyverse))
 
 ::: {.medium}
 
-<https://www.joelnitta.com>
+<https://joelnitta.github.io/2024-12-07-japanr>
 
 `Japan.R2024`
 
@@ -42,11 +42,24 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 
 :::
 
-## 自己紹介：ニッタ ジョエル {.line}
+## 自己紹介：`@joelnitta` {.line}
+
+:::: {.columns}
+
+::: {.column width="50%"}
 
 - 千葉大学 准教授
 - シダ植物の進化や生態学
 - Rパッケージ開発（進化生態学系）
+
+<https://www.joelnitta.com>
+:::
+
+::: {.column width="50%"}
+![](https://github.com/joelnitta/joelnitta-site/blob/master/static/media/headers/research_img2.jpg?raw=true){fig-alt="Image of Joel Nitta in field" height="450"}
+:::
+
+:::
 
 ## Quarto はすごいぞ {.line}
 
@@ -145,13 +158,46 @@ quarto_create_project(
 
 :::
 
+::: {.column width="50%"}
+
+```{r}
+#| label: file-tree-default
+#| echo: false
+dir_tree("example")
+```
+
+:::
+
+::::
+
+## 基本的なサイトを作る
+
+:::: {.columns}
+
 ::: {.column width="50%" .medsmall}
+```{r}
+#| label: create-example-site-show
+#| eval: false
+library(quarto)
+quarto_create_project(
+  name = "example",
+  type = "website",
+  no_prompt = TRUE,
+  quiet = TRUE
+)
+```
+
+:::
+
+::: {.column width="50%" .medsmall}
+
 ```{r}
 #| label: show-index
 #| filename: "example/_quarto.yml"
 #| eval: false
 #| file: example/_quarto.yml
 ```
+
 :::
 
 ::::
@@ -176,6 +222,7 @@ register_main_language(
 ```{r}
 #| label: show-index-add-lang
 #| filename: "example/_quarto.yml"
+#| code-line-numbers: "|21-26"
 #| eval: false
 #| file: example/_quarto.yml
 ```
@@ -203,6 +250,7 @@ register_further_languages(
 ```{r}
 #| label: show-index-add-second-lang
 #| filename: "example/_quarto.yml"
+#| code-line-numbers: "|21-32"
 #| eval: false
 #| file: example/_quarto.yml
 ```
@@ -214,7 +262,7 @@ register_further_languages(
 
 :::: {.columns .medsmall}
 
-::: {.column width="50%"}
+::: {.column width="48%"}
 ```{r}
 #| label: show-index-add-second-lang-show-again
 #| code-line-numbers: "|5,24,26,29-30"
@@ -224,7 +272,11 @@ register_further_languages(
 ```
 :::
 
-::: {.column width="50%"}
+::: {.column width="4%" .center .large}
+**→**
+:::
+
+::: {.column width="48%"}
 ```{r}
 #| label: edit-qmd
 #| include: false
@@ -234,7 +286,7 @@ fs::file_copy("example-quarto.yml", "example/_quarto.yml", overwrite = TRUE)
 
 ```{r}
 #| label: show-index-after-edit
-#| code-line-numbers: "|5,24,26,29-30"
+#| code-line-numbers: "|8-9,5,23,25,28-29"
 #| filename: "example/_quarto.yml"
 #| eval: false
 #| file: example/_quarto.yml
@@ -248,7 +300,7 @@ fs::file_copy("example-quarto.yml", "example/_quarto.yml", overwrite = TRUE)
 
 :::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="30%"}
 ```{r}
 #| label: file-tree-orig
 #| echo: false
@@ -257,12 +309,18 @@ dir_tree("example")
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="20%" .center .large}
+**→**
+:::
+
+::: {.column width="46%"}
 ```{r}
 #| label: add-index-ja
 #| include: false
 fs::file_copy("example-index-ja.qmd", "example/index.qmd", overwrite = TRUE)
 fs::file_copy("example-index-en.qmd", "example/index.en.qmd", overwrite = TRUE)
+fs::file_copy("example-about-ja.qmd", "example/about.qmd", overwrite = TRUE)
+fs::file_copy("example-about-en.qmd", "example/about.en.qmd", overwrite = TRUE)
 ```
 
 ```{r}
