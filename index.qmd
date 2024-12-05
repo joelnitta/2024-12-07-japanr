@@ -92,7 +92,8 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 ::: {.column width="60%"}
 ![](https://rstudio.github.io/cheatsheets/html/images/quarto-illustration.png)
 
-[Image: [Allison Horst](https://allisonhorst.com/allison-horst)]{.medsmall}
+[Artwork from "Hello, Quarto" keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by [Allison Horst](https://allisonhorst.com/cetinkaya-rundel-lowndes-quarto-keynote).]{.small}
+
 :::
 
 ::::
