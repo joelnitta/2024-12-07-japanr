@@ -243,25 +243,18 @@
 </div><p><span class="medsmall"><a href="https://github.com/quarto-dev/quarto-cli/issues/275" class="uri">https://github.com/quarto-dev/quarto-cli/issues/275</a></span></p>
 </div>
 </section>
-<section id="注意" class="slide level2 line">
-<h2>注意</h2>
-<ul>
-<li><p>いつか多言語機能がQuartoに加わる可能性があります</p></li>
-<li><p>その場合、<code>babelquarto</code>は要らなくなるでしょう</p></li>
-<li><p>でも開発スクジュールが分かりませんので、多言語のニーズが今あれば使ってもいいと思います</p></li>
-</ul>
-</section>
 <section id="babelquarto" class="slide level2 line">
 <h2><code>babelquarto</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li><p>Quarto BookかWebsite<strong>各言語</strong>のバージョンを<strong>レンダーする</strong></p></li>
-<li><p>翻訳とは別</p></li>
+<li><p>Quarto BookかWebsiteの<strong>各言語</strong>のバージョンを<strong>レンダーする</strong></p></li>
+<li><p>（翻訳とは別）</p></li>
 <li><p>Quartoのpluginではなく、Rパッケージ</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><img data-src="images/babelquarto_pagedown.png"></p>
+<p><span class="medsmall"><a href="https://docs.ropensci.org/babeldown/" class="uri">https://docs.ropensci.org/babeldown/</a></span></p>
 </div></div>
 </section>
 <section id="例ソフトウェアカーペントリー日本" class="slide level2 medsmall">
@@ -269,6 +262,14 @@
 <iframe src="https://swcarpentry-ja.github.io/" width="100%" height="500px">
 </iframe>
 <p><span class="large"><a href="https://swcarpentry-ja.github.io/" class="uri">https://swcarpentry-ja.github.io/</a></span></p>
+</section>
+<section id="注意" class="slide level2 line">
+<h2>注意</h2>
+<ul>
+<li><p>いつか多言語機能がQuartoに加わる可能性があります。</p></li>
+<li><p>その場合、<code>babelquarto</code>は要らなくなるでしょう。</p></li>
+<li><p>でも開発スクジュールが分かりませんので、多言語のニーズが今あれば使ってもいいと思います。</p></li>
+</ul>
 </section>
 <section>
 <section id="babelquarto-demo" class="title-slide slide level1 line center">
@@ -563,7 +564,6 @@
 <section id="レンダーする" class="slide level2">
 <h2>レンダーする</h2>
 <p>注意：<code>quarto render</code>が使えません</p>
-<p><code>[WARNING] Could not load translations for ja data file translations/ja.yaml not found</code>を無視して良い</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="fu">render_website</span>(<span class="at">project_path =</span> <span class="st">"example"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -618,17 +618,14 @@ Output created: _site/index.html</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a>servr<span class="sc">::</span><span class="fu">httw</span>(<span class="st">"example/_site"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section class="slide level2">
-
-<iframe src="https://joelnitta.github.io/example-babelquarto/" width="100%" height="500px">
+<iframe src="https://joelnitta.github.io/example-babelquarto/" width="100%" height="400px">
 </iframe>
-<p><a href="https://joelnitta.github.io/example-babelquarto/" class="uri">https://joelnitta.github.io/example-babelquarto/</a></p>
+<p><span class="medsmall"><a href="https://joelnitta.github.io/example-babelquarto/" class="uri">https://joelnitta.github.io/example-babelquarto/</a></span></p>
 </section>
 <section id="まとめ" class="slide level2 line">
 <h2>まとめ</h2>
 <ul>
-<li><code>_quarto.yml</code>に<code>babelquarto</code>フィルドを加える</li>
+<li><code>_quarto.yml</code>に<code>babelquarto:</code>フィルドを加える</li>
 <li>それぞれの<code>.qmd</code>ファイルの翻訳バージョンを加える
 <ul>
 <li><code>index.en.qmd</code></li>
@@ -637,37 +634,72 @@ Output created: _site/index.html</code></pre>
 <li>レンダーには<code>babelquarto::render_website()</code>を使う</li>
 </ul>
 </section>
-<section id="profiles" class="slide level2">
-<h2>profiles</h2>
+<section id="内容の自動翻訳" class="slide level2 line">
+<h2>内容の自動翻訳</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
-<li>Use for more complex setups</li>
+<li><p>Markdownやコードごと翻訳されると困る</p></li>
+<li><p><strong>解決策 ①</strong>：Custom GPT。プロンプトでMarkdownをいじらないように頼む。</p></li>
 </ul>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:40%;">
+<p><img data-src="images/custom_gpt.png" width="200"></p>
+<p><span class="medium"><a href="https://chatgpt.com/g/g-673042d78e908190b7535ee1e91683be-japanese-code-proofreader">Japanese Code Proofreader</a></span></p>
+</div></div>
 </section>
-<section id="github-action" class="slide level2">
-<h2>github action</h2>
+<section id="内容の自動翻訳-1" class="slide level2 line">
+<h2>内容の自動翻訳</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
-<li>modified from default, needs to install r packages</li>
+<li><p>Markdownやコードごと翻訳されると困る</p></li>
+<li><p><strong>解決策 ②</strong>：<code>babeldown</code>。DeepLに送る前にMarkdownをXMLにパースすることによって内容だけを翻訳する</p></li>
 </ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/babeldown_pagedown.png"> <span class="medsmall"><a href="https://docs.ropensci.org/babeldown/" class="uri">https://docs.ropensci.org/babeldown/</a></span></p>
+</div></div>
 </section>
-<section id="what-about-translating-content" class="slide level2">
-<h2>what about translating content?</h2>
+<section id="翻訳の維持" class="slide level2 line smaller">
+<h2>翻訳の維持</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
-<li><p>chatgpt custom gpt</p></li>
-<li><p>babeldown integration with deepl</p></li>
+<li><p>元の文章が変わると、翻訳を更新する必要がある</p></li>
+<li><p><code>PO</code>ファイルを使うと各文章とそれに対する翻訳を管理できる</p></li>
+<li><p>CrowdinやTransifexなど、クラウドツールが裏で<code>PO</code>ファイルを使っているものが多い</p></li>
 </ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="https://localazy.com/directus9/assets/82fc8da9-d665-4604-940a-a3d0737e4857/?quality=80&amp;format=webp.png"></p>
+</div><p><span class="small"><a href="https://localazy.com/term/free-po-editor" class="uri">https://localazy.com/term/free-po-editor</a></span></p>
+</div>
 </section>
-<section id="what-about-keeping-translation-up-to-date" class="slide level2">
-<h2>what about keeping translation up to date?</h2>
+<section id="翻訳の維持-1" class="slide level2 line">
+<h2>翻訳の維持</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
-<li><p>local gettext and PO files</p></li>
-<li><p>web based apps like crowdin</p></li>
+<li>ザ・カーペントリーズでは<a href="https://carpentries.crowdin.com/">Crowdin</a>を使っています</li>
 </ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/r-lesson-trans.svg"></p>
+<p><span class="medsmall"><a href="https://swcarpentry-ja.github.io/r-novice-gapminder/" class="uri">https://swcarpentry-ja.github.io/r-novice-gapminder/</a></span></p>
+</div></div>
 </section>
-<section id="take-home-message" class="slide level2">
-<h2>take home message</h2>
-<ul>
-<li>i18n enbles access and grows communities!</li>
-</ul>
+<section id="まとめ2" class="slide level2 line">
+<h2>まとめ（2）</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>多言語化はアケセスを増やすためにだけでなく、コミュニティを育むためにも大事です！</p>
+<p><span class="medlarge">Enjoy!</span></p>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjc1QFOdIIO1Sp_7D4tRBG7frYYTvm_wAv9Swi1qvosxV3b34vBm7f2I5n9SEw-yjQm9LWxo-8h7lnSD7JApMNCQaCv1qtT_WysBClnhOFFPUzdNRkgvH6qaJpGNoW5kg36Wq3DSLhyphenhyphenoI/s800/tree_seichou02.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div></div>
 
 </section></section>
     </div>
