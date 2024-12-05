@@ -83,28 +83,22 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 
 ::::
 
-## 注意 {.line}
-
-- いつか多言語機能がQuartoに加わる可能性があります
-
-- その場合、`babelquarto`は要らなくなるでしょう
-
-- でも開発スクジュールが分かりませんので、多言語のニーズが今あれば使ってもいいと思います
-
 ## `babelquarto` {.line}
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-- Quarto BookかWebsite**各言語**のバージョンを**レンダーする**
+- Quarto BookかWebsiteの**各言語**のバージョンを**レンダーする**
 
-- 翻訳とは別
+- （翻訳とは別）
 
 - Quartoのpluginではなく、Rパッケージ
 :::
 
 ::: {.column width="50%"}
 ![](images/babelquarto_pagedown.png)
+
+[<https://docs.ropensci.org/babeldown/>]{.medsmall}
 :::
 
 ::::
@@ -114,6 +108,14 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 <iframe src="https://swcarpentry-ja.github.io/" width="100%" height="500px"></iframe>
 
 [<https://swcarpentry-ja.github.io/>]{.large}
+
+## 注意 {.line}
+
+- いつか多言語機能がQuartoに加わる可能性があります。
+
+- その場合、`babelquarto`は要らなくなるでしょう。
+
+- でも開発スクジュールが分かりませんので、多言語のニーズが今あれば使ってもいいと思います。
 
 # babelquarto demo {.line}
 
@@ -302,8 +304,6 @@ dir_tree("example")
 
 注意：`quarto render`が使えません
 
-`[WARNING] Could not load translations for ja data file translations/ja.yaml not found`を無視して良い
-
 ```{r}
 #| label: render
 render_website(project_path = "example")
@@ -319,40 +319,110 @@ render_website(project_path = "example")
 servr::httw("example/_site")
 ```
 
----
+<iframe src="https://joelnitta.github.io/example-babelquarto/" width="100%" height="400px"></iframe>
 
-<iframe src="https://joelnitta.github.io/example-babelquarto/" width="100%" height="500px"></iframe>
-
-<https://joelnitta.github.io/example-babelquarto/>
+[<https://joelnitta.github.io/example-babelquarto/>]{.medsmall}
 
 ## まとめ {.line}
 
-- `_quarto.yml`に`babelquarto`フィルドを加える
+- `_quarto.yml`に`babelquarto:`フィルドを加える
 - それぞれの`.qmd`ファイルの翻訳バージョンを加える
   - `index.en.qmd`
   - `about.en.qmd` など
 - レンダーには`babelquarto::render_website()`を使う
 
-## profiles
+## 内容の自動翻訳 {.line}
 
-- Use for more complex setups
+:::: {.columns}
 
-## github action
+::: {.column width="50%"}
+- Markdownやコードごと翻訳されると困る
 
-- modified from default, needs to install r packages
+- **解決策 ①**：Custom GPT。プロンプトでMarkdownをいじらないように頼む。
+:::
 
-## what about translating content?
+::: {.column width="10%"}
+:::
 
-- chatgpt custom gpt
+::: {.column width="40%"}
 
-- babeldown integration with deepl
+![](images/custom_gpt.png){width=200}
 
-## what about keeping translation up to date?
+[[Japanese Code Proofreader](https://chatgpt.com/g/g-673042d78e908190b7535ee1e91683be-japanese-code-proofreader)]{.medium}
+:::
 
-- local gettext and PO files
+::::
 
-- web based apps like crowdin
+## 内容の自動翻訳 {.line}
 
-## take home message
+:::: {.columns}
 
-- i18n enbles access and grows communities!
+::: {.column width="50%"}
+- Markdownやコードごと翻訳されると困る
+
+- **解決策 ②**：`babeldown`。DeepLに送る前にMarkdownをXMLにパースすることによって内容だけを翻訳する
+:::
+
+::: {.column width="50%"}
+![](images/babeldown_pagedown.png)
+[<https://docs.ropensci.org/babeldown/>]{.medsmall}
+:::
+
+::::
+
+## 翻訳の維持 {.line .smaller}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+- 元の文章が変わると、翻訳を更新する必要がある
+
+- `PO`ファイルを使うと各文章とそれに対する翻訳を管理できる
+
+- CrowdinやTransifexなど、クラウドツールが裏で`PO`ファイルを使っているものが多い
+:::
+
+::: {.column width="50%"}
+
+![](https://localazy.com/directus9/assets/82fc8da9-d665-4604-940a-a3d0737e4857/?quality=80&format=webp)
+:::
+
+[<https://localazy.com/term/free-po-editor>]{.small}
+
+::::
+
+## 翻訳の維持 {.line}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- ザ・カーペントリーズでは[Crowdin](https://carpentries.crowdin.com/)を使っています
+:::
+
+::: {.column width="50%"}
+
+![](images/r-lesson-trans.svg)
+
+[<https://swcarpentry-ja.github.io/r-novice-gapminder/>]{.medsmall}
+
+:::
+
+::::
+
+
+## まとめ（2） {.line}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+多言語化はアケセスを増やすためにだけでなく、コミュニティを育むためにも大事です！
+
+[Enjoy!]{.medlarge}
+:::
+
+::: {.column width="40%"}
+![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjc1QFOdIIO1Sp_7D4tRBG7frYYTvm_wAv9Swi1qvosxV3b34vBm7f2I5n9SEw-yjQm9LWxo-8h7lnSD7JApMNCQaCv1qtT_WysBClnhOFFPUzdNRkgvH6qaJpGNoW5kg36Wq3DSLhyphenhyphenoI/s800/tree_seichou02.png){fig-align="center"}
+:::
+
+::::
