@@ -91,6 +91,8 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 
 ::: {.column width="60%"}
 ![](https://rstudio.github.io/cheatsheets/html/images/quarto-illustration.png)
+
+[Image: [Allison Horst](https://allisonhorst.com/allison-horst)]{.medsmall}
 :::
 
 ::::
@@ -118,11 +120,10 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 :::: {.columns}
 
 ::: {.column width="50%"}
-- Quarto BookやWebsiteの**各言語**のバージョンを**レンダーする**。
+- [@maelle](https://github.com/maelle)によるQuarto BookやWebsiteの**各言語**のバージョンを**レンダーする** Rパッケージ。
 
 - （翻訳とは別）
 
-- Quartoのプラグインではなく、Rパッケージです。
 :::
 
 ::: {.column width="50%"}
