@@ -121,7 +121,7 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 :::: {.columns}
 
 ::: {.column width="50%"}
-- [@maelle](https://github.com/maelle)によるQuarto BookやWebsiteの**各言語**のバージョンを**レンダーする** Rパッケージ。
+- [@maelle](https://github.com/maelle)と[@Nenuial](https://github.com/Nenuial)によるQuarto BookやWebsiteの**各言語**のバージョンを**レンダーする** Rパッケージ。
 
 - （翻訳とは別）
 
