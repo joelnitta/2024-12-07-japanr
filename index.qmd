@@ -31,11 +31,14 @@ qrcode::qr_code("https://joelnitta.github.io/2024-12-07-japanr") |>
     )
 ```
 
-## babelquartoによるQuartoウェブサイトの多言語化 {.theme-slide1 .line}
+## `babelquarto`によるQuartoウェブサイトの多言語化 {.theme-slide1 .line}
+
+[Making a multilingual Quarto website with `babelquarto`]{.medium}
 
 <br>
 
-ニッタ ジョエル
+ニッタ ジョエル  
+[Joel NITTA]{.medsmall}
 
 <br>
 
@@ -45,7 +48,7 @@ qrcode::qr_code("https://joelnitta.github.io/2024-12-07-japanr") |>
 
 `Japan.R2024`
 
-![](images/qrcode.svg){.absolute bottom=30 right=330 width="200" height="200"}
+![](images/qrcode.svg){.absolute bottom=200 right=280 width="200" height="200"}
 
 :::
 
@@ -78,6 +81,10 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 
 :::
 
+::: {.aside}
+I am an assoc. prof. at Chiba University in Japan studying fern ecology and evolution. I develop R packages for eco-evo.
+:::
+
 ## Quarto はすごいぞ {.line}
 
 :::: {.columns}
@@ -98,6 +105,10 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 
 ::::
 
+::: {.aside}
+[Quarto is a fantastic tool for data science. It supports multiple programming languages and output formats.]{.medium}
+:::
+
 ## Quartoの多言語機能は未完成 {.line}
 
 :::: {.columns}
@@ -106,6 +117,7 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 - しかし、Quartoは比較的新しいため、まだ欠けて<br>いる機能があります。
 
 - 標準では**多言語機能**が<br>ありません。
+
 :::
 
 ::: {.column width="50%"}
@@ -116,6 +128,10 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 
 ::::
 
+::: {.aside}
+But Quarto does not yet support multilingual websites.
+:::
+
 ## `babelquarto` {.line}
 
 :::: {.columns}
@@ -124,7 +140,6 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 - [@maelle](https://github.com/maelle)と[@Nenuial](https://github.com/Nenuial)によるQuarto BookやWebsiteの**各言語**のバージョンを**レンダーする** Rパッケージ。
 
 - （翻訳とは別）
-
 :::
 
 ::: {.column width="50%"}
@@ -135,11 +150,15 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 
 ::::
 
+::: {.aside}
+`babelquarto`by [@maelle](https://github.com/maelle) and [@Nenuial](https://github.com/Nenuial) renders a multilingual Quarto Book or Website (separate from actual translation)
+:::
+
 ## 例：ソフトウェア・カーペントリー日本 {.medsmall}
 
 <iframe src="https://swcarpentry-ja.github.io/" width="100%" height="500px"></iframe>
 
-[<https://swcarpentry-ja.github.io/>]{.large}
+[Example: <https://swcarpentry-ja.github.io/>]{.large}
 
 ## 注意 {.line}
 
@@ -148,6 +167,10 @@ Image: [Alexandre Debiève on Unsplash](https://unsplash.com/ja/%E5%86%99%E7%9C%
 - その場合、`babelquarto`は不要になるでしょう。
 
 - しかし、現時点で多言語のニーズがある場合は十分活用できます。
+
+::: {.aside}
+Caution: there is a possibility that support for multilingual websites will be added to Quarto, so someday you won't need to use `babelquarto`. But it is a good option for now.
+:::
 
 # babelquarto demo {.line}
 
@@ -189,6 +212,10 @@ dir_tree("example")
 
 ::::
 
+::: {.aside}
+First step: create a Quarto website
+:::
+
 ## 基本的なサイトを作る
 
 :::: {.columns}
@@ -221,6 +248,10 @@ quarto_create_project(
 
 ::::
 
+::: {.aside}
+First step: create a Quarto website
+:::
+
 ## 主言語を登録する
 
 :::: {.columns}
@@ -249,6 +280,10 @@ register_main_language(
 
 ::::
 
+::: {.aside}
+Next step: add main (default) language
+:::
+
 ## 翻訳言語を追加する
 
 :::: {.columns}
@@ -276,6 +311,10 @@ register_further_languages(
 :::
 
 ::::
+
+::: {.aside}
+Next step: add further language(s)
+:::
 
 ## `_quarto.yml`を編集する
 
@@ -315,6 +354,10 @@ fs::file_copy("example-quarto.yml", "example/_quarto.yml", overwrite = TRUE)
 
 ::::
 
+::: {.aside}
+Next step: edit `_quarto.yml`
+:::
+
 ## 翻訳ファイルを追加する
 
 :::: {.columns}
@@ -352,6 +395,10 @@ dir_tree("example")
 
 ::::
 
+::: {.aside}
+Next step: add translated files, e.g. `index.en.qmd` (English version of `index.qmd`)
+:::
+
 ---
 
 :::: {.columns .medsmall}
@@ -386,6 +433,10 @@ dir_tree("example")
 render_website(project_path = "example")
 ```
 
+::: {.aside}
+Render website. Note you cannot use `quarto render`, use `babelquarto::render_website()` instead. To serve, use `servr::httw()`.
+:::
+
 ## サーブする
 
 注意：`quarto preview`が使えません
@@ -399,14 +450,6 @@ servr::httw("example/_site")
 <iframe src="https://joelnitta.github.io/example-babelquarto/" width="100%" height="400px"></iframe>
 
 [<https://joelnitta.github.io/example-babelquarto/>]{.medsmall}
-
-## まとめ {.line}
-
-- `_quarto.yml`に`babelquarto:`フィールドを加える
-- それぞれの`.qmd`ファイルの翻訳バージョンを加える
-  - `index.en.qmd`
-  - `about.en.qmd` など
-- レンダーには`babelquarto::render_website()`を使う
 
 ## 内容の自動翻訳 {.line}
 
@@ -425,6 +468,10 @@ servr::httw("example/_site")
 . . .
 
 - いや、だからそうではなく・・
+
+::: {.aside}
+If you try to use AI for automated translation, it might translate the actual Markdown code.
+:::
 
 ## 内容の自動翻訳 {.line}
 
@@ -446,6 +493,10 @@ servr::httw("example/_site")
 
 ::::
 
+::: {.aside}
+Solution 1: use a Custom GPT with a prompt to preserve Markdown formatting.
+:::
+
 ## 内容の自動翻訳 {.line}
 
 :::: {.columns}
@@ -460,6 +511,10 @@ servr::httw("example/_site")
 :::
 
 ::::
+
+::: {.aside}
+Solution 2: use `babeldown`, which parses the Markdown into XML and only translates the content using DeepL.
+:::
 
 ## 翻訳の維持 {.line .smaller}
 
@@ -483,6 +538,10 @@ servr::httw("example/_site")
 
 ::::
 
+::: {.aside}
+You need to update the translation if the source changes. PO files are good for this, and are used by cloud services like Crowdin and Transifex.
+:::
+
 ## 翻訳の維持 {.line}
 
 :::: {.columns}
@@ -501,7 +560,11 @@ servr::httw("example/_site")
 
 ::::
 
-## まとめ（2） {.line}
+::: {.aside}
+At Software Carpentry Japan, we use Crowdin for community-based translations.
+:::
+
+## まとめ {.line}
 
 :::: {.columns}
 
@@ -516,3 +579,7 @@ servr::httw("example/_site")
 :::
 
 ::::
+
+::: {.aside}
+Take-home message: internationalization is important not only for accessibility but for growing communities!
+:::
