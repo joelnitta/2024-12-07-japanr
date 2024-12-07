@@ -192,14 +192,16 @@
 
 
 <section id="babelquartoによるquartoウェブサイトの多言語化" class="slide level2 theme-slide1 line">
-<h2>babelquartoによるQuartoウェブサイトの多言語化</h2>
+<h2><code>babelquarto</code>によるQuartoウェブサイトの多言語化</h2>
+<p><span class="medium">Making a multilingual Quarto website with <code>babelquarto</code></span></p>
 <p><br></p>
-<p>ニッタ ジョエル</p>
+<p>ニッタ ジョエル<br>
+<span class="medsmall">Joel NITTA</span></p>
 <p><br></p>
 <div class="medium">
 <p><a href="https://joelnitta.github.io/2024-12-07-japanr" class="uri">https://joelnitta.github.io/2024-12-07-japanr</a></p>
 <p><code>Japan.R2024</code></p>
-<p><img data-src="images/qrcode.svg" class="absolute" style="bottom: 30px; right: 330px; width: 200px; height: 200px; "></p>
+<p><img data-src="images/qrcode.svg" class="absolute" style="bottom: 200px; right: 280px; width: 200px; height: 200px; "></p>
 </div>
 
 <aside><div>
@@ -220,7 +222,10 @@
 </div><div class="column" style="width:50%;">
 <p><img data-src="https://github.com/joelnitta/joelnitta-site/blob/master/static/media/headers/research_img2.jpg?raw=true" alt="Image of Joel Nitta in field" height="450"></p>
 </div></div>
-</section>
+
+<aside><div>
+<p>I am an assoc. prof. at Chiba University in Japan studying fern ecology and evolution. I develop R packages for eco-evo.</p>
+</div></aside></section>
 <section id="quarto-はすごいぞ" class="slide level2 line">
 <h2>Quarto はすごいぞ</h2>
 <div class="columns">
@@ -237,7 +242,10 @@
 <p><img data-src="https://rstudio.github.io/cheatsheets/html/images/quarto-illustration.png"></p>
 <p><span class="small">Artwork from “Hello, Quarto” keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by <a href="https://allisonhorst.com/cetinkaya-rundel-lowndes-quarto-keynote">Allison Horst</a>.</span></p>
 </div></div>
-</section>
+
+<aside><div>
+<p><span class="medium">Quarto is a fantastic tool for data science. It supports multiple programming languages and output formats.</span></p>
+</div></aside></section>
 <section id="quartoの多言語機能は未完成" class="slide level2 line">
 <h2>Quartoの多言語機能は未完成</h2>
 <div class="columns">
@@ -250,25 +258,31 @@
 <p><img data-src="images/multi_lang_issue.png" style="width:90.0%"></p>
 </div><p><span class="medsmall"><a href="https://github.com/quarto-dev/quarto-cli/issues/275" class="uri">https://github.com/quarto-dev/quarto-cli/issues/275</a></span></p>
 </div>
-</section>
+
+<aside><div>
+<p>But Quarto does not yet support multilingual websites.</p>
+</div></aside></section>
 <section id="babelquarto" class="slide level2 line">
 <h2><code>babelquarto</code></h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li><p><a href="https://github.com/maelle"><span class="citation" data-cites="maelle">@maelle</span></a>によるQuarto BookやWebsiteの<strong>各言語</strong>のバージョンを<strong>レンダーする</strong> Rパッケージ。</p></li>
+<li><p><a href="https://github.com/maelle"><span class="citation" data-cites="maelle">@maelle</span></a>と<a href="https://github.com/Nenuial"><span class="citation" data-cites="Nenuial">@Nenuial</span></a>によるQuarto BookやWebsiteの<strong>各言語</strong>のバージョンを<strong>レンダーする</strong> Rパッケージ。</p></li>
 <li><p>（翻訳とは別）</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><img data-src="images/babelquarto_pagedown.png"></p>
 <p><span class="medsmall"><a href="https://docs.ropensci.org/babeldown/" class="uri">https://docs.ropensci.org/babeldown/</a></span></p>
 </div></div>
-</section>
+
+<aside><div>
+<p><code>babelquarto</code>by <a href="https://github.com/maelle"><span class="citation" data-cites="maelle">@maelle</span></a> and <a href="https://github.com/Nenuial"><span class="citation" data-cites="Nenuial">@Nenuial</span></a> renders a multilingual Quarto Book or Website (separate from actual translation)</p>
+</div></aside></section>
 <section id="例ソフトウェアカーペントリー日本" class="slide level2 medsmall">
 <h2>例：ソフトウェア・カーペントリー日本</h2>
 <iframe src="https://swcarpentry-ja.github.io/" width="100%" height="500px">
 </iframe>
-<p><span class="large"><a href="https://swcarpentry-ja.github.io/" class="uri">https://swcarpentry-ja.github.io/</a></span></p>
+<p><span class="large">Example: <a href="https://swcarpentry-ja.github.io/" class="uri">https://swcarpentry-ja.github.io/</a></span></p>
 </section>
 <section id="注意" class="slide level2 line">
 <h2>注意</h2>
@@ -277,7 +291,10 @@
 <li><p>その場合、<code>babelquarto</code>は不要になるでしょう。</p></li>
 <li><p>しかし、現時点で多言語のニーズがある場合は十分活用できます。</p></li>
 </ul>
-</section>
+
+<aside><div>
+<p>Caution: there is a possibility that support for multilingual websites will be added to Quarto, so someday you won’t need to use <code>babelquarto</code>. But it is a good option for now.</p>
+</div></aside></section>
 <section>
 <section id="babelquarto-demo" class="title-slide slide level1 line center">
 <h1>babelquarto demo</h1>
@@ -307,7 +324,10 @@
 </div>
 </div>
 </div></div>
-</section>
+
+<aside><div>
+<p>First step: create a Quarto website</p>
+</div></aside></section>
 <section id="基本的なサイトを作る-1" class="slide level2">
 <h2>基本的なサイトを作る</h2>
 <div class="columns">
@@ -346,7 +366,10 @@
 </div>
 </div>
 </div></div>
-</section>
+
+<aside><div>
+<p>First step: create a Quarto website</p>
+</div></aside></section>
 <section id="主言語を登録する" class="slide level2">
 <h2>主言語を登録する</h2>
 <div class="columns">
@@ -393,7 +416,10 @@
 </div>
 </div>
 </div></div>
-</section>
+
+<aside><div>
+<p>Next step: add main (default) language</p>
+</div></aside></section>
 <section id="翻訳言語を追加する" class="slide level2">
 <h2>翻訳言語を追加する</h2>
 <div class="columns">
@@ -446,7 +472,10 @@
 </div>
 </div>
 </div></div>
-</section>
+
+<aside><div>
+<p>Next step: add further language(s)</p>
+</div></aside></section>
 <section id="quarto.ymlを編集する" class="slide level2">
 <h2><code>_quarto.yml</code>を編集する</h2>
 <div class="columns medsmall">
@@ -532,7 +561,10 @@
 </div>
 </div>
 </div></div>
-</section>
+
+<aside><div>
+<p>Next step: edit <code>_quarto.yml</code></p>
+</div></aside></section>
 <section id="翻訳ファイルを追加する" class="slide level2">
 <h2>翻訳ファイルを追加する</h2>
 <div class="columns">
@@ -561,7 +593,10 @@
 </div>
 </div>
 </div></div>
-</section>
+
+<aside><div>
+<p>Next step: add translated files, e.g.&nbsp;<code>index.en.qmd</code> (English version of <code>index.qmd</code>)</p>
+</div></aside></section>
 <section class="slide level2">
 
 <div class="columns medsmall">
@@ -618,7 +653,10 @@ Output created: _site/index.html
 Output created: _site/index.html</code></pre>
 </div>
 </div>
-</section>
+
+<aside><div>
+<p>Render website. Note you cannot use <code>quarto render</code>, use <code>babelquarto::render_website()</code> instead. To serve, use <code>servr::httw()</code>.</p>
+</div></aside></section>
 <section id="サーブする" class="slide level2">
 <h2>サーブする</h2>
 <p>注意：<code>quarto preview</code>が使えません</p>
@@ -628,18 +666,6 @@ Output created: _site/index.html</code></pre>
 <iframe src="https://joelnitta.github.io/example-babelquarto/" width="100%" height="400px">
 </iframe>
 <p><span class="medsmall"><a href="https://joelnitta.github.io/example-babelquarto/" class="uri">https://joelnitta.github.io/example-babelquarto/</a></span></p>
-</section>
-<section id="まとめ" class="slide level2 line">
-<h2>まとめ</h2>
-<ul>
-<li><code>_quarto.yml</code>に<code>babelquarto:</code>フィールドを加える</li>
-<li>それぞれの<code>.qmd</code>ファイルの翻訳バージョンを加える
-<ul>
-<li><code>index.en.qmd</code></li>
-<li><code>about.en.qmd</code> など</li>
-</ul></li>
-<li>レンダーには<code>babelquarto::render_website()</code>を使う</li>
-</ul>
 </section>
 <section id="内容の自動翻訳" class="slide level2 line">
 <h2>内容の自動翻訳</h2>
@@ -659,8 +685,11 @@ Output created: _site/index.html</code></pre>
 <ul>
 <li>いや、だからそうではなく・・</li>
 </ul>
+
 </div>
-</section>
+<aside><div>
+<p>If you try to use AI for automated translation, it might translate the actual Markdown code.</p>
+</div></aside></section>
 <section id="内容の自動翻訳-1" class="slide level2 line">
 <h2>内容の自動翻訳</h2>
 <div class="columns">
@@ -674,7 +703,10 @@ Output created: _site/index.html</code></pre>
 <p><img data-src="images/custom_gpt.png" width="200"></p>
 <p><span class="medium"><a href="https://chatgpt.com/g/g-673042d78e908190b7535ee1e91683be-japanese-code-proofreader">Japanese Code Proofreader</a></span></p>
 </div></div>
-</section>
+
+<aside><div>
+<p>Solution 1: use a Custom GPT with a prompt to preserve Markdown formatting.</p>
+</div></aside></section>
 <section id="内容の自動翻訳-2" class="slide level2 line">
 <h2>内容の自動翻訳</h2>
 <div class="columns">
@@ -685,7 +717,10 @@ Output created: _site/index.html</code></pre>
 </div><div class="column" style="width:50%;">
 <p><img data-src="images/babeldown_pagedown.png"> <span class="medsmall"><a href="https://docs.ropensci.org/babeldown/" class="uri">https://docs.ropensci.org/babeldown/</a></span></p>
 </div></div>
-</section>
+
+<aside><div>
+<p>Solution 2: use <code>babeldown</code>, which parses the Markdown into XML and only translates the content using DeepL.</p>
+</div></aside></section>
 <section id="翻訳の維持" class="slide level2 line smaller">
 <h2>翻訳の維持</h2>
 <div class="columns">
@@ -699,7 +734,10 @@ Output created: _site/index.html</code></pre>
 <p><img data-src="https://localazy.com/directus9/assets/82fc8da9-d665-4604-940a-a3d0737e4857/?quality=80&amp;format=webp.png"></p>
 </div><p><span class="small"><a href="https://localazy.com/term/free-po-editor" class="uri">https://localazy.com/term/free-po-editor</a></span></p>
 </div>
-</section>
+
+<aside><div>
+<p>You need to update the translation if the source changes. PO files are good for this, and are used by cloud services like Crowdin and Transifex.</p>
+</div></aside></section>
 <section id="翻訳の維持-1" class="slide level2 line">
 <h2>翻訳の維持</h2>
 <div class="columns">
@@ -711,9 +749,12 @@ Output created: _site/index.html</code></pre>
 <p><img data-src="images/r-lesson-trans.svg"></p>
 <p><span class="medsmall"><a href="https://swcarpentry-ja.github.io/r-novice-gapminder/" class="uri">https://swcarpentry-ja.github.io/r-novice-gapminder/</a></span></p>
 </div></div>
-</section>
-<section id="まとめ2" class="slide level2 line">
-<h2>まとめ（2）</h2>
+
+<aside><div>
+<p>At Software Carpentry Japan, we use Crowdin for community-based translations.</p>
+</div></aside></section>
+<section id="まとめ" class="slide level2 line">
+<h2>まとめ</h2>
 <div class="columns">
 <div class="column" style="width:70%;">
 <p>多言語化は<strong>アクセス</strong>を増やすためだけでなく、<strong>コミュニティを育む</strong>ためにも重要です！</p>
@@ -726,7 +767,10 @@ Output created: _site/index.html</code></pre>
 </div>
 </div></div>
 
-</section></section>
+
+<aside><div>
+<p>Take-home message: internationalization is important not only for accessibility but for growing communities!</p>
+</div></aside></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
